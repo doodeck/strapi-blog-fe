@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 const Article = ({ article, categories }) => {
   const router = useRouter()
 
+  // fallback: true stuff
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
   if (router.isFallback) {
@@ -81,7 +82,7 @@ export async function getStaticPaths() {
         slug: article.slug,
       },
     })),
-    fallback: true,
+    fallback: false,
   };
 }
 
