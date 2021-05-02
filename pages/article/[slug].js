@@ -7,8 +7,18 @@ import Layout from "../../components/layout";
 import Image from "../../components/image";
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
+import { useRouter } from 'next/router'
 
 const Article = ({ article, categories }) => {
+  const router = useRouter()
+
+  // If the page is not yet generated, this will be displayed
+  // initially until getStaticProps() finishes running
+  if (router.isFallback) {
+    return <div>Loading...</div>
+  }
+
+  // Render post...  
   const imageUrl = getStrapiMedia(article.image);
 
   const seo = {
@@ -71,7 +81,7 @@ export async function getStaticPaths() {
         slug: article.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 
