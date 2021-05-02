@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Then the manual changes were made to implement strapi.io blog, based on the tutorial:
+[https://strapi.io/blog/build-a-blog-with-next-react-js-strapi](https://strapi.io/blog/build-a-blog-with-next-react-js-strapi)
+
+
 ## Getting Started
 
 First, run the development server:
